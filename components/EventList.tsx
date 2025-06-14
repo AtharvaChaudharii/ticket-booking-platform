@@ -6,13 +6,14 @@ import EventCard from "./EventCard";
 import Spinner from "./Spinner";
 import { CalendarDays, Ticket } from "lucide-react";
 
+
 export default function EventList() {
   const events = useQuery(api.events.get);
 
   if (!events) {
     return (
       <div className="min-h-[400px] flex items-center justify-center">
-        <Spinner />
+        <Spinner/>        {/*if there is no event then loading screen should appear*/}
       </div>
     );
   }
